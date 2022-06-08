@@ -65,11 +65,11 @@ class VoucherPageState extends State<VoucherPage> {
   ];
 
   List<Konten> _genshin = [
-    Konten('assets/gCrystal.png', 'G.Crystals', '28', "IDR 9.850"),
-    Konten('assets/gCrystal.png', 'G.Crystals', '36', "IDR 12.500"),
-    Konten('assets/gCrystal.png', 'G.Crystals', '59', "IDR 18.600"),
-    Konten('assets/gCrystal.png', 'G.Crystals', '74', "IDR 22.000"),
-    Konten('assets/gCrystal.png', 'G.Crystals', '85', "IDR 24.500")
+    Konten('assets/gCrystal.png', 'G.Crystals', '60', "IDR 13.000"),
+    Konten('assets/gCrystal.png', 'G.Crystals', '300', "IDR 60.000"),
+    Konten('assets/gCrystal.png', 'G.Crystals', '980', "IDR 180.000"),
+    Konten('assets/gCrystal.png', 'G.Crystals', '1980', "IDR 360.000"),
+    Konten('assets/gCrystal.png', 'G.Crystals', '3280', "IDR 600.00")
   ];
 
   @override
@@ -206,188 +206,246 @@ class VoucherPageState extends State<VoucherPage> {
                   ],
                 ),
               ),
-              body: TabBarView(children: [
-                Column(
-                  children: _mobilelegend
-                      .map(
-                        (Konten card) => Container(
-                            margin:
-                                EdgeInsets.only(top: 23, right: 20, left: 20),
-                            child: Card(
-                              child: ListTile(
-                                leading: Image.asset(
-                                  card.image,
-                                  height: 40,
-                                ),
-                                title: Text(
-                                  card.qty + '  ' + card.currency,
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w500),
-                                ),
-                                subtitle: Text(
-                                  card.price,
-                                  style: TextStyle(fontSize: 16, height: 1.5),
-                                ),
-                                trailing: ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                      primary: Color(0xff446382)),
-                                  onPressed: () => print('book'),
-                                  child: Text(
-                                    'Book Now',
-                                    style: TextStyle(fontSize: 14),
-                                  ),
-                                ),
-                              ),
-                            )),
-                      )
-                      .toList(),
-                ),
-                Column(
-                  children: _freefire
-                      .map(
-                        (Konten card) => Container(
-                            margin:
-                                EdgeInsets.only(top: 23, right: 20, left: 20),
-                            child: Card(
-                              child: ListTile(
-                                leading: Image.asset(
-                                  card.image,
-                                  height: 40,
-                                ),
-                                title: Text(
-                                  card.qty + '  ' + card.currency,
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w500),
-                                ),
-                                subtitle: Text(
-                                  card.price,
-                                  style: TextStyle(fontSize: 16, height: 1.5),
-                                ),
-                                trailing: ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                      primary: Color(0xff446382)),
-                                  onPressed: () => print('book'),
-                                  child: Text(
-                                    'Book Now',
-                                    style: TextStyle(fontSize: 14),
-                                  ),
-                                ),
-                              ),
-                            )),
-                      )
-                      .toList(),
-                ),
-                Column(
-                  children: _valorant
-                      .map(
-                        (Konten card) => Container(
-                            margin:
-                                EdgeInsets.only(top: 23, right: 20, left: 20),
-                            child: Card(
-                              child: ListTile(
-                                leading: Image.asset(
-                                  card.image,
-                                  height: 40,
-                                ),
-                                title: Text(
-                                  card.qty + '  ' + card.currency,
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w500),
-                                ),
-                                subtitle: Text(
-                                  card.price,
-                                  style: TextStyle(fontSize: 16, height: 1.5),
-                                ),
-                                trailing: ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                      primary: Color(0xff446382)),
-                                  onPressed: () => print('book'),
-                                  child: Text(
-                                    'Book Now',
-                                    style: TextStyle(fontSize: 14),
-                                  ),
-                                ),
-                              ),
-                            )),
-                      )
-                      .toList(),
-                ),
-                Column(
-                  children: _ragnarok
-                      .map(
-                        (Konten card) => Container(
-                            margin:
-                                EdgeInsets.only(top: 23, right: 20, left: 20),
-                            child: Card(
-                              child: ListTile(
-                                leading: Image.asset(
-                                  card.image,
-                                  height: 40,
-                                ),
-                                title: Text(
-                                  card.qty + '  ' + card.currency,
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w500),
-                                ),
-                                subtitle: Text(
-                                  card.price,
-                                  style: TextStyle(fontSize: 16, height: 1.5),
-                                ),
-                                trailing: ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                      primary: Color(0xff446382)),
-                                  onPressed: () => print('book'),
-                                  child: Text(
-                                    'Book Now',
-                                    style: TextStyle(fontSize: 14),
-                                  ),
-                                ),
-                              ),
-                            )),
-                      )
-                      .toList(),
-                ),
-                Column(
-                  children: _genshin
-                      .map(
-                        (Konten card) => Container(
-                            margin:
-                                EdgeInsets.only(top: 23, right: 20, left: 20),
-                            child: Card(
-                              child: ListTile(
-                                leading: Image.asset(
-                                  card.image,
-                                  height: 40,
-                                ),
-                                title: Text(
-                                  card.qty + '  ' + card.currency,
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w500),
-                                ),
-                                subtitle: Text(
-                                  card.price,
-                                  style: TextStyle(fontSize: 16, height: 1.5),
-                                ),
-                                trailing: ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                      primary: Color(0xff446382)),
-                                  onPressed: () => print('book'),
-                                  child: Text(
-                                    'Book Now',
-                                    style: TextStyle(fontSize: 14),
-                                  ),
-                                ),
-                              ),
-                            )),
-                      )
-                      .toList(),
-                ),
-              ]))),
+              body: Container(
+                margin: EdgeInsets.only(top: 20),
+                child: TabBarView(children: [
+                  Column(children: [
+                    Expanded(
+                        child: ListView(
+                      children: _mobilelegend
+                          .map(
+                            (Konten card) => Container(
+                                margin: EdgeInsets.only(
+                                    top: 5, right: 20, left: 20, bottom: 20),
+                                child: Card(
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(20)),
+                                    elevation: 8,
+                                    child: Padding(
+                                      padding:
+                                          EdgeInsets.only(top: 5, bottom: 5),
+                                      child: ListTile(
+                                        leading: Image.asset(
+                                          card.image,
+                                          height: 40,
+                                        ),
+                                        title: Text(
+                                          card.qty + '  ' + card.currency,
+                                          style: TextStyle(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.w500),
+                                        ),
+                                        subtitle: Text(
+                                          card.price,
+                                          style: TextStyle(
+                                              fontSize: 16, height: 1.5),
+                                        ),
+                                        trailing: ElevatedButton(
+                                          style: ElevatedButton.styleFrom(
+                                              primary: Color(0xff446382)),
+                                          onPressed: () => print('book'),
+                                          child: Text(
+                                            'Book Now',
+                                            style: TextStyle(fontSize: 14),
+                                          ),
+                                        ),
+                                      ),
+                                    ))),
+                          )
+                          .toList(),
+                    ))
+                  ]),
+                  Column(children: [
+                    Expanded(
+                        child: ListView(
+                      children: _freefire
+                          .map(
+                            (Konten card) => Container(
+                                margin: EdgeInsets.only(
+                                    top: 15, right: 20, left: 20, bottom: 10),
+                                child: Card(
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(20)),
+                                    elevation: 8,
+                                    child: Padding(
+                                      padding:
+                                          EdgeInsets.only(top: 5, bottom: 5),
+                                      child: ListTile(
+                                        leading: Image.asset(
+                                          card.image,
+                                          height: 40,
+                                        ),
+                                        title: Text(
+                                          card.qty + '  ' + card.currency,
+                                          style: TextStyle(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.w500),
+                                        ),
+                                        subtitle: Text(
+                                          card.price,
+                                          style: TextStyle(
+                                              fontSize: 16, height: 1.5),
+                                        ),
+                                        trailing: ElevatedButton(
+                                          style: ElevatedButton.styleFrom(
+                                              primary: Color(0xff446382)),
+                                          onPressed: () => print('book'),
+                                          child: Text(
+                                            'Book Now',
+                                            style: TextStyle(fontSize: 14),
+                                          ),
+                                        ),
+                                      ),
+                                    ))),
+                          )
+                          .toList(),
+                    ))
+                  ]),
+                  Column(children: [
+                    Expanded(
+                        child: ListView(
+                      children: _valorant
+                          .map(
+                            (Konten card) => Container(
+                                margin: EdgeInsets.only(
+                                    top: 15, right: 20, left: 20, bottom: 10),
+                                child: Card(
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(20)),
+                                    elevation: 8,
+                                    child: Padding(
+                                      padding:
+                                          EdgeInsets.only(top: 5, bottom: 5),
+                                      child: ListTile(
+                                        leading: Image.asset(
+                                          card.image,
+                                          height: 40,
+                                        ),
+                                        title: Text(
+                                          card.qty + '  ' + card.currency,
+                                          style: TextStyle(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.w500),
+                                        ),
+                                        subtitle: Text(
+                                          card.price,
+                                          style: TextStyle(
+                                              fontSize: 16, height: 1.5),
+                                        ),
+                                        trailing: ElevatedButton(
+                                          style: ElevatedButton.styleFrom(
+                                              primary: Color(0xff446382)),
+                                          onPressed: () => print('book'),
+                                          child: Text(
+                                            'Book Now',
+                                            style: TextStyle(fontSize: 14),
+                                          ),
+                                        ),
+                                      ),
+                                    ))),
+                          )
+                          .toList(),
+                    ))
+                  ]),
+                  Column(children: [
+                    Expanded(
+                        child: ListView(
+                      children: _ragnarok
+                          .map(
+                            (Konten card) => Container(
+                                margin: EdgeInsets.only(
+                                    top: 15, right: 20, left: 20, bottom: 10),
+                                child: Card(
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(20)),
+                                    elevation: 8,
+                                    child: Padding(
+                                      padding:
+                                          EdgeInsets.only(top: 5, bottom: 5),
+                                      child: ListTile(
+                                        leading: Image.asset(
+                                          card.image,
+                                          height: 40,
+                                        ),
+                                        title: Text(
+                                          card.qty + '  ' + card.currency,
+                                          style: TextStyle(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.w500),
+                                        ),
+                                        subtitle: Text(
+                                          card.price,
+                                          style: TextStyle(
+                                              fontSize: 16, height: 1.5),
+                                        ),
+                                        trailing: ElevatedButton(
+                                          style: ElevatedButton.styleFrom(
+                                              primary: Color(0xff446382)),
+                                          onPressed: () => print('book'),
+                                          child: Text(
+                                            'Book Now',
+                                            style: TextStyle(fontSize: 14),
+                                          ),
+                                        ),
+                                      ),
+                                    ))),
+                          )
+                          .toList(),
+                    ))
+                  ]),
+                  Column(children: [
+                    Expanded(
+                        child: ListView(
+                      children: _genshin
+                          .map(
+                            (Konten card) => Container(
+                                margin: EdgeInsets.only(
+                                    top: 15, right: 20, left: 20, bottom: 10),
+                                child: Card(
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(20)),
+                                    elevation: 8,
+                                    child: Padding(
+                                      padding:
+                                          EdgeInsets.only(top: 5, bottom: 5),
+                                      child: ListTile(
+                                        leading: Image.asset(
+                                          card.image,
+                                          height: 40,
+                                        ),
+                                        title: Text(
+                                          card.qty + '  ' + card.currency,
+                                          style: TextStyle(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.w500),
+                                        ),
+                                        subtitle: Text(
+                                          card.price,
+                                          style: TextStyle(
+                                              fontSize: 16, height: 1.5),
+                                        ),
+                                        trailing: ElevatedButton(
+                                          style: ElevatedButton.styleFrom(
+                                              primary: Color(0xff446382)),
+                                          onPressed: () => print('book'),
+                                          child: Text(
+                                            'Book Now',
+                                            style: TextStyle(fontSize: 14),
+                                          ),
+                                        ),
+                                      ),
+                                    ))),
+                          )
+                          .toList(),
+                    ))
+                  ]),
+                ]),
+              ))),
     );
   }
 }
