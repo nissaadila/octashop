@@ -65,10 +65,10 @@ class VoucherPageState extends State<VoucherPage> {
 
   List<Konten> _genshin = [
     Konten('assets/gCrystal.png', 'G.Crystals', '28', "IDR 9.850"),
-    Konten('assets/diamond.png', 'G.Crystals', '36', "IDR 12.500"),
-    Konten('assets/diamond.png', 'G.Crystals', '59', "IDR 18.600"),
-    Konten('assets/diamond.png', 'G.Crystals', '74', "IDR 22.000"),
-    Konten('assets/diamond.png', 'G.Crystals', '85', "IDR 24.500")
+    Konten('assets/gCrystal.png', 'G.Crystals', '36', "IDR 12.500"),
+    Konten('assets/gCrystal.png', 'G.Crystals', '59', "IDR 18.600"),
+    Konten('assets/gCrystal.png', 'G.Crystals', '74', "IDR 22.000"),
+    Konten('assets/gCrystal.png', 'G.Crystals', '85', "IDR 24.500")
   ];
 
   @override
@@ -85,7 +85,7 @@ class VoucherPageState extends State<VoucherPage> {
                   actions: [
                     Container(
                       margin: EdgeInsets.only(right: 10, top: 5),
-                      child: Image.asset('assets/logo.png', height: 200),
+                      child: Image.asset('assets/logo.png', height: 50),
                     )
                   ],
                   backgroundColor: Colors.white,
@@ -124,7 +124,7 @@ class VoucherPageState extends State<VoucherPage> {
                             title: Text('User',
                                 style: TextStyle(
                                     fontWeight: FontWeight.w500,
-                                    fontSize: 23,
+                                    fontSize: 20,
                                     color: Colors.white)),
                           ),
                         )),
@@ -139,7 +139,7 @@ class VoucherPageState extends State<VoucherPage> {
                           title: Text(
                             'Home',
                             style: TextStyle(
-                                fontSize: 15, color: Color(0xff446382)),
+                                fontSize: 14, color: Color(0xff446382)),
                           ),
                           onTap: () => print('Home button is clicked')),
                     ),
@@ -154,7 +154,7 @@ class VoucherPageState extends State<VoucherPage> {
                           title: Text(
                             'Voucher',
                             style: TextStyle(
-                                fontSize: 15, color: Color(0xff446382)),
+                                fontSize: 14, color: Color(0xff446382)),
                           ),
                           onTap: () => print('Voucher button is clicked')),
                     ),
@@ -169,7 +169,7 @@ class VoucherPageState extends State<VoucherPage> {
                           title: Text(
                             'News and Promotion',
                             style: TextStyle(
-                                fontSize: 15, color: Color(0xff446382)),
+                                fontSize: 14, color: Color(0xff446382)),
                           ),
                           onTap: () =>
                               print('News and Promotion button is clicked')),
@@ -194,7 +194,7 @@ class VoucherPageState extends State<VoucherPage> {
                           title: Text(
                             'Log Out',
                             style: TextStyle(
-                                fontSize: 15, color: Color(0xff446382)),
+                                fontSize: 14, color: Color(0xff446382)),
                           ),
                           onTap: () => print('Log Out button is clicked')),
                     ),
