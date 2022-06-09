@@ -42,13 +42,16 @@ class LoginPageState extends State<LoginPage> {
       Navigator.push(
           _context,
           MaterialPageRoute(
-              builder: (context) =>
-                  VoucherPage())); // TODO: arahin harusnya ke HOME PAGE
+              builder: (context) => HomePage(
+                  username: _usernameCon
+                      .text)));
+           // TODO: arahin harusnya ke HOME PAGE
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    _context = context;
     // TODO: implement build
     return Scaffold(
         body: Column(
