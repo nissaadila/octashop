@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:octashop/pages/home.dart';
 import 'package:octashop/pages/login.dart';
 import 'package:octashop/pages/voucher_detail.dart';
 
@@ -135,79 +137,44 @@ class VoucherPageState extends State<VoucherPage> {
                                     color: Colors.white)),
                           ),
                         )),
-                    Container(
-                      margin: EdgeInsets.only(left: 15, top: 5),
-                      child: ListTile(
-                          leading: Icon(
-                            Icons.home,
-                            color: Color(0xff446382),
-                            size: 32,
-                          ),
-                          title: Text(
-                            'Home',
-                            style: TextStyle(
-                                fontSize: 14, color: Color(0xff446382)),
-                          ),
-                          onTap: () => print('Home button is clicked')),
+                    ListTile(
+                        leading: Icon(Icons.home, color: Color(0xff446382)),
+                        title: Text("Home"),
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    HomePage(username: widget.username)))),
+                    ListTile(
+                        leading: Icon(CupertinoIcons.ticket_fill,
+                            color: Color(0xff446382)),
+                        title: Text("Voucher"),
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => VoucherPage(
+                                    username:
+                                        widget.username)))), //voucher page
+                    ListTile(
+                        leading: Icon(CupertinoIcons.info_circle_fill,
+                            color: Color(0xff446382)),
+                        title: Text("News and Promotion"),
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    LoginPage()))), //news page
+                    Divider(
+                      color: Colors.black,
+                      thickness: 1,
                     ),
-                    Container(
-                      margin: EdgeInsets.only(left: 15, top: 5),
-                      child: ListTile(
-                          leading: Icon(
-                            Icons.local_offer,
-                            color: Color(0xff446382),
-                            size: 30,
-                          ),
-                          title: Text(
-                            'Voucher',
-                            style: TextStyle(
-                                fontSize: 14, color: Color(0xff446382)),
-                          ),
-                          onTap: () => print('Voucher button is clicked')),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(left: 15, top: 5),
-                      child: ListTile(
-                          leading: Icon(
-                            Icons.info,
-                            color: Color(0xff446382),
-                            size: 32,
-                          ),
-                          title: Text(
-                            'News and Promotion',
-                            style: TextStyle(
-                                fontSize: 14, color: Color(0xff446382)),
-                          ),
-                          onTap: () =>
-                              print('News and Promotion button is clicked')),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(top: 12),
-                      child: Divider(
-                        color: Color(0xff446382),
-                        thickness: 1.5,
-                        indent: 30,
-                        endIndent: 30,
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(left: 15, top: 5),
-                      child: ListTile(
-                          leading: Icon(
-                            Icons.logout,
-                            color: Color(0xff446382),
-                            size: 32,
-                          ),
-                          title: Text(
-                            'Log Out',
-                            style: TextStyle(
-                                fontSize: 14, color: Color(0xff446382)),
-                          ),
-                          onTap: () => Navigator.push(
-                              _context,
-                              MaterialPageRoute(
-                                  builder: (_context) => LoginPage()))),
-                    ),
+                    ListTile(
+                        leading: Icon(Icons.logout, color: Color(0xff446382)),
+                        title: Text("Log Out"),
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LoginPage())))
                   ],
                 ),
               ),

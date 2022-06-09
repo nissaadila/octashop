@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:homepage/pages/login.dart';
+import 'package:octashop/pages/login.dart';
+import 'package:octashop/pages/voucher.dart';
 
 class HomePage extends StatefulWidget {
   final String username;
@@ -87,7 +88,7 @@ class HomePageState extends State<HomePage> {
                 onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => LoginPage()))), //voucher page
+                        builder: (context) => VoucherPage(username: name)))), //voucher page
             ListTile(
                 leading: Icon(CupertinoIcons.info_circle_fill,
                     color: Color(0xff446382)),

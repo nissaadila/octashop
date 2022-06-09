@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:octashop/pages/home.dart';
 import 'package:octashop/pages/voucher.dart';
 
 class LoginPage extends StatefulWidget {
@@ -42,25 +43,14 @@ class LoginPageState extends State<LoginPage> {
       Navigator.push(
           _context,
           MaterialPageRoute(
-<<<<<<< HEAD
-              builder: (context) =>
-                  VoucherPage(username: _usernameCon.text,))); // TODO: arahin harusnya ke HOME PAGE
-=======
-              builder: (context) => HomePage(
-                  username: _usernameCon
-                      .text)));
-           // TODO: arahin harusnya ke HOME PAGE
->>>>>>> b2063e65ebe4b143929730f794077c66495ad0cc
+              builder: (context) => HomePage(username: _usernameCon.text)));
+      // TODO: arahin harusnya ke HOME PAGE
     }
   }
 
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
-  _context = context;
-=======
     _context = context;
->>>>>>> b2063e65ebe4b143929730f794077c66495ad0cc
     // TODO: implement build
     return Scaffold(
         body: Column(
@@ -75,12 +65,13 @@ class LoginPageState extends State<LoginPage> {
             ),
             margin: EdgeInsets.all(20)),
         Container(
-            child: TextField(
-              controller: _passwordCon,
-              decoration: InputDecoration(hintText: "Password"),
-              obscureText: true,
-            ),
-            margin: EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0, bottom: 40.0),
+          child: TextField(
+            controller: _passwordCon,
+            decoration: InputDecoration(hintText: "Password"),
+            obscureText: true,
+          ),
+          margin:
+              EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0, bottom: 40.0),
         ),
         Visibility(
             visible: _isVisible,

@@ -17,7 +17,7 @@ class VoucherDetailPage extends StatefulWidget {
       required this.image,
       required this.qty,
       required this.price})
-      : super(key: key);
+      : super(key: key); 
 
   @override
   State<StatefulWidget> createState() => VoucherDetailPageState();
