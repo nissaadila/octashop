@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:octashop/pages/login.dart';
 import 'package:octashop/pages/voucher_detail.dart';
-import 'package:page_transition/page_transition.dart';
 
 class VoucherPage extends StatefulWidget {
+  final String username;
+
+  VoucherPage({Key? key, required this.username}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() => VoucherPageState();
 }
@@ -35,43 +38,43 @@ class VoucherPageState extends State<VoucherPage> {
   ];
 
   List<Konten> _mobilelegend = [
-    Konten('assets/diamond.png', 'Diamonds', '28', "IDR 9.850"),
-    Konten('assets/diamond.png', 'Diamonds', '36', "IDR 12.500"),
-    Konten('assets/diamond.png', 'Diamonds', '59', "IDR 18.600"),
-    Konten('assets/diamond.png', 'Diamonds', '74', "IDR 22.000"),
-    Konten('assets/diamond.png', 'Diamonds', '85', "IDR 24.500")
+    Konten('assets/diamond.png', 'Diamonds', '28', "9.850"),
+    Konten('assets/diamond.png', 'Diamonds', '36', "12.500"),
+    Konten('assets/diamond.png', 'Diamonds', '59', "18.600"),
+    Konten('assets/diamond.png', 'Diamonds', '74', "22.000"),
+    Konten('assets/diamond.png', 'Diamonds', '85', "24.500")
   ];
 
   List<Konten> _freefire = [
-    Konten('assets/diamond.png', 'Diamonds', '1075', "IDR 147.000"),
-    Konten('assets/diamond.png', 'Diamonds', '1080', "IDR 150.000"),
-    Konten('assets/diamond.png', 'Diamonds', '1450', "IDR 197.000"),
-    Konten('assets/diamond.png', 'Diamonds', '2000', "IDR 267.000"),
-    Konten('assets/diamond.png', 'Diamonds', '7290', "IDR 979.000")
+    Konten('assets/diamond.png', 'Diamonds', '1075', "147.000"),
+    Konten('assets/diamond.png', 'Diamonds', '1080', "150.000"),
+    Konten('assets/diamond.png', 'Diamonds', '1450', "197.000"),
+    Konten('assets/diamond.png', 'Diamonds', '2000', "267.000"),
+    Konten('assets/diamond.png', 'Diamonds', '7290', "979.000")
   ];
 
   List<Konten> _valorant = [
-    Konten('assets/point.png', 'Points', '1120', "IDR 128.500"),
-    Konten('assets/point.png', 'Points', '1375', "IDR 148.500"),
-    Konten('assets/point.png', 'Points', '1795', "IDR 198.000"),
-    Konten('assets/point.png', 'Points', '2075', "IDR 227.000"),
-    Konten('assets/point.png', 'Points', '2400', "IDR 247.000")
+    Konten('assets/point.png', 'Points', '1120', "128.500"),
+    Konten('assets/point.png', 'Points', '1375', "148.500"),
+    Konten('assets/point.png', 'Points', '1795', "198.000"),
+    Konten('assets/point.png', 'Points', '2075', "227.000"),
+    Konten('assets/point.png', 'Points', '2400', "247.000")
   ];
 
   List<Konten> _ragnarok = [
-    Konten('assets/diamond.png', 'Diamonds', '2500', "IDR 63.000"),
-    Konten('assets/diamond.png', 'Diamonds', '5000', "IDR 125.000"),
-    Konten('assets/diamond.png', 'Diamonds', '7500', "IDR 184.000"),
-    Konten('assets/diamond.png', 'Diamonds', '10000', "IDR 245.000"),
-    Konten('assets/diamond.png', 'Diamonds', '15300', "IDR 401.000")
+    Konten('assets/diamond.png', 'Diamonds', '2500', "63.000"),
+    Konten('assets/diamond.png', 'Diamonds', '5000', "125.000"),
+    Konten('assets/diamond.png', 'Diamonds', '7500', "184.000"),
+    Konten('assets/diamond.png', 'Diamonds', '10000', "245.000"),
+    Konten('assets/diamond.png', 'Diamonds', '15300', "401.000")
   ];
 
   List<Konten> _genshin = [
-    Konten('assets/gCrystal.png', 'G.Crystals', '60', "IDR 13.000"),
-    Konten('assets/gCrystal.png', 'G.Crystals', '300', "IDR 60.000"),
-    Konten('assets/gCrystal.png', 'G.Crystals', '980', "IDR 180.000"),
-    Konten('assets/gCrystal.png', 'G.Crystals', '1980', "IDR 360.000"),
-    Konten('assets/gCrystal.png', 'G.Crystals', '3280', "IDR 600.00")
+    Konten('assets/gCrystal.png', 'G.Crystals', '60', "13.000"),
+    Konten('assets/gCrystal.png', 'G.Crystals', '300', "60.000"),
+    Konten('assets/gCrystal.png', 'G.Crystals', '980', "180.000"),
+    Konten('assets/gCrystal.png', 'G.Crystals', '1980', "360.000"),
+    Konten('assets/gCrystal.png', 'G.Crystals', '3280', "600.00")
   ];
 
   @override
@@ -125,7 +128,7 @@ class VoucherPageState extends State<VoucherPage> {
                                 color: Color(0xffefba9b),
                               ),
                             ),
-                            title: Text('User',
+                            title: Text(widget.username,
                                 style: TextStyle(
                                     fontWeight: FontWeight.w500,
                                     fontSize: 20,
@@ -239,7 +242,7 @@ class VoucherPageState extends State<VoucherPage> {
                                               fontWeight: FontWeight.w500),
                                         ),
                                         subtitle: Text(
-                                          card.price,
+                                          'IDR ' + card.price,
                                           style: TextStyle(
                                               fontSize: 16, height: 1.5),
                                         ),
@@ -248,19 +251,18 @@ class VoucherPageState extends State<VoucherPage> {
                                               primary: Color(0xff446382)),
                                           onPressed: () => Navigator.push(
                                               _context,
-                                              PageTransition(
-                                                  child: VoucherDetailPage(
-                                                      game: 'Mobile Legend',
-                                                      image:
-                                                          'assets/mobileLegend.png',
-                                                      qty: card.qty +
-                                                          " " +
-                                                          card.currency,
-                                                      price: card.price),
-                                                  type: PageTransitionType
-                                                      .bottomToTop,
-                                                  duration: Duration(
-                                                      milliseconds: 500))),
+                                              MaterialPageRoute(
+                                                  builder: (_context) =>
+                                                      VoucherDetailPage(
+                                                          username:
+                                                              widget.username,
+                                                          game: 'Mobile Legend',
+                                                          image:
+                                                              'assets/mobileLegend.png',
+                                                          qty: card.qty +
+                                                              " " +
+                                                              card.currency,
+                                                          price: card.price))),
                                           child: Text(
                                             'Book Now',
                                             style: TextStyle(fontSize: 14),
@@ -300,7 +302,7 @@ class VoucherPageState extends State<VoucherPage> {
                                               fontWeight: FontWeight.w500),
                                         ),
                                         subtitle: Text(
-                                          card.price,
+                                          'IDR ' + card.price,
                                           style: TextStyle(
                                               fontSize: 16, height: 1.5),
                                         ),
@@ -309,19 +311,18 @@ class VoucherPageState extends State<VoucherPage> {
                                               primary: Color(0xff446382)),
                                           onPressed: () => Navigator.push(
                                               _context,
-                                              PageTransition(
-                                                  child: VoucherDetailPage(
-                                                      game: 'Free Fire',
-                                                      image:
-                                                          'assets/freefire.png',
-                                                      qty: card.qty +
-                                                          " " +
-                                                          card.currency,
-                                                      price: card.price),
-                                                  type: PageTransitionType
-                                                      .bottomToTop,
-                                                  duration: Duration(
-                                                      milliseconds: 500))),
+                                              MaterialPageRoute(
+                                                  builder: (_context) =>
+                                                      VoucherDetailPage(
+                                                          username:
+                                                              widget.username,
+                                                          game: 'Free Fire',
+                                                          image:
+                                                              'assets/freefire.png',
+                                                          qty: card.qty +
+                                                              " " +
+                                                              card.currency,
+                                                          price: card.price))),
                                           child: Text(
                                             'Book Now',
                                             style: TextStyle(fontSize: 14),
@@ -361,7 +362,7 @@ class VoucherPageState extends State<VoucherPage> {
                                               fontWeight: FontWeight.w500),
                                         ),
                                         subtitle: Text(
-                                          card.price,
+                                          'IDR ' + card.price,
                                           style: TextStyle(
                                               fontSize: 16, height: 1.5),
                                         ),
@@ -370,19 +371,18 @@ class VoucherPageState extends State<VoucherPage> {
                                               primary: Color(0xff446382)),
                                           onPressed: () => Navigator.push(
                                               _context,
-                                              PageTransition(
-                                                  child: VoucherDetailPage(
-                                                      game: 'Valorant',
-                                                      image:
-                                                          'assets/valorant.png',
-                                                      qty: card.qty +
-                                                          " " +
-                                                          card.currency,
-                                                      price: card.price),
-                                                  type: PageTransitionType
-                                                      .bottomToTop,
-                                                  duration: Duration(
-                                                      milliseconds: 500))),
+                                              MaterialPageRoute(
+                                                  builder: (_context) =>
+                                                      VoucherDetailPage(
+                                                          username:
+                                                              widget.username,
+                                                          game: 'Valorant',
+                                                          image:
+                                                              'assets/valorant.png',
+                                                          qty: card.qty +
+                                                              " " +
+                                                              card.currency,
+                                                          price: card.price))),
                                           child: Text(
                                             'Book Now',
                                             style: TextStyle(fontSize: 14),
@@ -422,7 +422,7 @@ class VoucherPageState extends State<VoucherPage> {
                                               fontWeight: FontWeight.w500),
                                         ),
                                         subtitle: Text(
-                                          card.price,
+                                          'IDR ' + card.price,
                                           style: TextStyle(
                                               fontSize: 16, height: 1.5),
                                         ),
@@ -431,19 +431,18 @@ class VoucherPageState extends State<VoucherPage> {
                                               primary: Color(0xff446382)),
                                           onPressed: () => Navigator.push(
                                               _context,
-                                              PageTransition(
-                                                  child: VoucherDetailPage(
-                                                      game: 'Ragnarok X',
-                                                      image:
-                                                          'assets/ragnarok.png',
-                                                      qty: card.qty +
-                                                          " " +
-                                                          card.currency,
-                                                      price: card.price),
-                                                  type: PageTransitionType
-                                                      .bottomToTop,
-                                                  duration: Duration(
-                                                      milliseconds: 500))),
+                                              MaterialPageRoute(
+                                                  builder: (_context) =>
+                                                      VoucherDetailPage(
+                                                          username:
+                                                              widget.username,
+                                                          game: 'Ragnarok X',
+                                                          image:
+                                                              'assets/ragnarok.png',
+                                                          qty: card.qty +
+                                                              " " +
+                                                              card.currency,
+                                                          price: card.price))),
                                           child: Text(
                                             'Book Now',
                                             style: TextStyle(fontSize: 14),
@@ -483,7 +482,7 @@ class VoucherPageState extends State<VoucherPage> {
                                               fontWeight: FontWeight.w500),
                                         ),
                                         subtitle: Text(
-                                          card.price,
+                                          'IDR ' + card.price,
                                           style: TextStyle(
                                               fontSize: 16, height: 1.5),
                                         ),
@@ -492,19 +491,19 @@ class VoucherPageState extends State<VoucherPage> {
                                               primary: Color(0xff446382)),
                                           onPressed: () => Navigator.push(
                                               _context,
-                                              PageTransition(
-                                                  child: VoucherDetailPage(
-                                                      game: 'Genshin Impact',
-                                                      image:
-                                                          'assets/genshin.png',
-                                                      qty: card.qty +
-                                                          " " +
-                                                          card.currency,
-                                                      price: card.price),
-                                                  type: PageTransitionType
-                                                      .bottomToTop,
-                                                  duration: Duration(
-                                                      milliseconds: 500))),
+                                              MaterialPageRoute(
+                                                  builder: (_context) =>
+                                                      VoucherDetailPage(
+                                                          username:
+                                                              widget.username,
+                                                          game:
+                                                              'Genshin Impact',
+                                                          image:
+                                                              'assets/genshin.png',
+                                                          qty: card.qty +
+                                                              " " +
+                                                              card.currency,
+                                                          price: card.price))),
                                           child: Text(
                                             'Book Now',
                                             style: TextStyle(fontSize: 14),

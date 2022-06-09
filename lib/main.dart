@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:octashop/pages/login.dart';
-import 'package:octashop/pages/voucher.dart';
 
 void main() {
   runApp(App());
