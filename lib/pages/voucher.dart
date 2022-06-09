@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:octashop/pages/login.dart';
 import 'package:octashop/pages/voucher_detail.dart';
+import 'package:page_transition/page_transition.dart';
 
 class VoucherPage extends StatefulWidget {
   @override
@@ -247,16 +248,19 @@ class VoucherPageState extends State<VoucherPage> {
                                               primary: Color(0xff446382)),
                                           onPressed: () => Navigator.push(
                                               _context,
-                                              MaterialPageRoute(
-                                                  builder: (_context) =>
-                                                      VoucherDetailPage(
-                                                          game: 'Mobile Legend',
-                                                          image:
-                                                              'assets/mobileLegend.png',
-                                                          qty: card.qty +
-                                                              " " +
-                                                              card.currency,
-                                                          price: card.price))),
+                                              PageTransition(
+                                                  child: VoucherDetailPage(
+                                                      game: 'Mobile Legend',
+                                                      image:
+                                                          'assets/mobileLegend.png',
+                                                      qty: card.qty +
+                                                          " " +
+                                                          card.currency,
+                                                      price: card.price),
+                                                  type: PageTransitionType
+                                                      .bottomToTop,
+                                                  duration: Duration(
+                                                      milliseconds: 500))),
                                           child: Text(
                                             'Book Now',
                                             style: TextStyle(fontSize: 14),
@@ -305,16 +309,19 @@ class VoucherPageState extends State<VoucherPage> {
                                               primary: Color(0xff446382)),
                                           onPressed: () => Navigator.push(
                                               _context,
-                                              MaterialPageRoute(
-                                                  builder: (_context) =>
-                                                      VoucherDetailPage(
-                                                          game: 'Free Fire',
-                                                          image:
-                                                              'assets/freefire.png',
-                                                          qty: card.qty +
-                                                              " " +
-                                                              card.currency,
-                                                          price: card.price))),
+                                              PageTransition(
+                                                  child: VoucherDetailPage(
+                                                      game: 'Free Fire',
+                                                      image:
+                                                          'assets/freefire.png',
+                                                      qty: card.qty +
+                                                          " " +
+                                                          card.currency,
+                                                      price: card.price),
+                                                  type: PageTransitionType
+                                                      .bottomToTop,
+                                                  duration: Duration(
+                                                      milliseconds: 500))),
                                           child: Text(
                                             'Book Now',
                                             style: TextStyle(fontSize: 14),
@@ -363,16 +370,19 @@ class VoucherPageState extends State<VoucherPage> {
                                               primary: Color(0xff446382)),
                                           onPressed: () => Navigator.push(
                                               _context,
-                                              MaterialPageRoute(
-                                                  builder: (_context) =>
-                                                      VoucherDetailPage(
-                                                          game: 'Valorant',
-                                                          image:
-                                                              'assets/valorant.png',
-                                                          qty: card.qty +
-                                                              " " +
-                                                              card.currency,
-                                                          price: card.price))),
+                                              PageTransition(
+                                                  child: VoucherDetailPage(
+                                                      game: 'Valorant',
+                                                      image:
+                                                          'assets/valorant.png',
+                                                      qty: card.qty +
+                                                          " " +
+                                                          card.currency,
+                                                      price: card.price),
+                                                  type: PageTransitionType
+                                                      .bottomToTop,
+                                                  duration: Duration(
+                                                      milliseconds: 500))),
                                           child: Text(
                                             'Book Now',
                                             style: TextStyle(fontSize: 14),
@@ -421,16 +431,19 @@ class VoucherPageState extends State<VoucherPage> {
                                               primary: Color(0xff446382)),
                                           onPressed: () => Navigator.push(
                                               _context,
-                                              MaterialPageRoute(
-                                                  builder: (_context) =>
-                                                      VoucherDetailPage(
-                                                          game: 'Ragnarok-X',
-                                                          image:
-                                                              'assets/ragnarok.png',
-                                                          qty: card.qty +
-                                                              " " +
-                                                              card.currency,
-                                                          price: card.price))),
+                                              PageTransition(
+                                                  child: VoucherDetailPage(
+                                                      game: 'Ragnarok X',
+                                                      image:
+                                                          'assets/ragnarok.png',
+                                                      qty: card.qty +
+                                                          " " +
+                                                          card.currency,
+                                                      price: card.price),
+                                                  type: PageTransitionType
+                                                      .bottomToTop,
+                                                  duration: Duration(
+                                                      milliseconds: 500))),
                                           child: Text(
                                             'Book Now',
                                             style: TextStyle(fontSize: 14),
@@ -479,16 +492,19 @@ class VoucherPageState extends State<VoucherPage> {
                                               primary: Color(0xff446382)),
                                           onPressed: () => Navigator.push(
                                               _context,
-                                              MaterialPageRoute(
-                                                  builder: (_context) =>
-                                                      VoucherDetailPage(
-                                                          game: 'Genshin Impact',
-                                                          image:
-                                                              'assets/genshin.png',
-                                                          qty: card.qty +
-                                                              " " +
-                                                              card.currency,
-                                                          price: card.price))),
+                                              PageTransition(
+                                                  child: VoucherDetailPage(
+                                                      game: 'Genshin Impact',
+                                                      image:
+                                                          'assets/genshin.png',
+                                                      qty: card.qty +
+                                                          " " +
+                                                          card.currency,
+                                                      price: card.price),
+                                                  type: PageTransitionType
+                                                      .bottomToTop,
+                                                  duration: Duration(
+                                                      milliseconds: 500))),
                                           child: Text(
                                             'Book Now',
                                             style: TextStyle(fontSize: 14),
