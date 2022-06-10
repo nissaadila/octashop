@@ -53,44 +53,51 @@ class LoginPageState extends State<LoginPage> {
     _context = context;
     // TODO: implement build
     return Scaffold(
-        body: Column(
-      children: [
-        Container(
-            child: Image.asset("assets/logo.png", height: 250,),
-            margin: EdgeInsets.all(20)),
-        Container(
+        body: Column(children: [
+      Expanded(
+          child: ListView(
+        children: [
+          Container(
+              child: Image.asset(
+                "assets/logo.png",
+                height: 250,
+              ),
+              margin: EdgeInsets.all(20)),
+          Container(
+              child: TextField(
+                controller: _usernameCon,
+                decoration: InputDecoration(hintText: "Username"),
+              ),
+              margin: EdgeInsets.all(20)),
+          Container(
             child: TextField(
-              controller: _usernameCon,
-              decoration: InputDecoration(hintText: "Username"),
+              controller: _passwordCon,
+              decoration: InputDecoration(hintText: "Password"),
+              obscureText: true,
             ),
-            margin: EdgeInsets.all(20)),
-        Container(
-          child: TextField(
-            controller: _passwordCon,
-            decoration: InputDecoration(hintText: "Password"),
-            obscureText: true,
+            margin: EdgeInsets.only(
+                left: 20.0, right: 20.0, top: 20.0, bottom: 40.0),
           ),
-          margin:
-              EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0, bottom: 40.0),
-        ),
-        Visibility(
-            visible: _isVisible,
-            child: Container(
-                margin: EdgeInsets.only(
-                    left: 20.0, right: 20.0, top: 20.0, bottom: 40.0),
-                child: Text(
-                  _errorMsg,
-                  style: TextStyle(color: Colors.red, fontSize: 14),
-                ))),
-        ElevatedButton(
-          onPressed: _validateUser,
-          child: Text("LOGIN"),
-          style: ElevatedButton.styleFrom(
-              primary: Color(0xffEFBA9B),
-              textStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
-              minimumSize: Size(180, 50)),
-        )
-      ],
-    ));
+          Visibility(
+              visible: _isVisible,
+              child: Container(
+                  margin: EdgeInsets.only(
+                      left: 20.0, right: 20.0, top: 20.0, bottom: 40.0),
+                  child: Text(
+                    _errorMsg,
+                    style: TextStyle(color: Colors.red, fontSize: 14),
+                  ))),
+          ElevatedButton(
+            onPressed: _validateUser,
+            child: Text("LOGIN"),
+            style: ElevatedButton.styleFrom(
+                primary: Color(0xffEFBA9B),
+                textStyle:
+                    TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
+                minimumSize: Size(180, 50)),
+          )
+        ],
+      ))
+    ]));
   }
 }
