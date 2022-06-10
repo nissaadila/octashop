@@ -42,20 +42,33 @@ class NewsAndPromotionPageState extends State<NewsAndPromotionPage> {
         home: Scaffold(
       backgroundColor: Colors.white,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(70.0),
-        child: AppBar(
-          iconTheme: IconThemeData(color: Colors.black),
-          backgroundColor: Colors.white,
-          actions: [
-            Container(
-              child: Image(
-                image: AssetImage('assets/logo.png'),
-                height: 50,
+          preferredSize: Size.fromHeight(70.0),
+          child: AppBar(
+            toolbarHeight: 70.0,
+            leading: Builder(builder: (BuildContext context) {
+              return IconButton(
+                icon: const Icon(
+                  Icons.menu,
+                  color: Colors.black,
+                  size: 50,
+                ),
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                },
+                tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+              );
+            }),
+            elevation: 0,
+            backgroundColor: Colors.white,
+            title: Align(
+              child: Image.asset(
+                'assets/logo.png',
+                height: 70,
+                width: 70,
               ),
-            )
-          ],
-        ),
-      ),
+              alignment: Alignment.centerRight,
+            ),
+          )),
       drawer: Drawer(
         child: ListView(
           children: [
@@ -74,7 +87,7 @@ class NewsAndPromotionPageState extends State<NewsAndPromotionPage> {
                     ),
                   ),
                   title: Text(
-                    'User',
+                    '$name',
                     style: TextStyle(
                         fontWeight: FontWeight.w500,
                         fontSize: 20,

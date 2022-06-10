@@ -56,7 +56,7 @@ class LoginPageState extends State<LoginPage> {
         body: Column(
       children: [
         Container(
-            child: Image.asset("assets/logo.png", fit: BoxFit.contain),
+            child: Image.asset("assets/logo.png", height: 250,),
             margin: EdgeInsets.all(20)),
         Container(
             child: TextField(

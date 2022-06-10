@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:octashop/pages/login.dart';
+import 'package:octashop/pages/newsandpromotion.dart';
 import 'package:octashop/pages/voucher.dart';
 
 class HomePage extends StatefulWidget {
@@ -96,7 +97,7 @@ class HomePageState extends State<HomePage> {
                 onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => LoginPage()))), //news page
+                        builder: (context) => NewsAndPromotionPage(username: name)))), //news page
             Divider(
               color: Colors.black,
               thickness: 1,

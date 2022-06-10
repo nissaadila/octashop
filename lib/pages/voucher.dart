@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:octashop/pages/home.dart';
 import 'package:octashop/pages/login.dart';
+import 'package:octashop/pages/newsandpromotion.dart';
 import 'package:octashop/pages/voucher_detail.dart';
 
 class VoucherPage extends StatefulWidget {
@@ -88,17 +89,33 @@ class VoucherPageState extends State<VoucherPage> {
           child: Scaffold(
               backgroundColor: Color(0xffefba9b),
               appBar: PreferredSize(
-                preferredSize: Size.fromHeight(120.0),
+                preferredSize: Size.fromHeight(130.0),
                 child: AppBar(
-                  iconTheme: IconThemeData(color: Colors.black),
-                  actions: [
-                    Container(
-                      margin: EdgeInsets.only(right: 10, top: 5),
-                      child: Image.asset('assets/logo.png', height: 50),
-                    )
-                  ],
-                  backgroundColor: Colors.white,
+                  toolbarHeight: 70.0,
+                  leading: Builder(builder: (BuildContext context) {
+                    return IconButton(
+                      icon: const Icon(
+                        Icons.menu,
+                        color: Colors.black,
+                        size: 50,
+                      ),
+                      onPressed: () {
+                        Scaffold.of(context).openDrawer();
+                      },
+                      tooltip: MaterialLocalizations.of(context)
+                          .openAppDrawerTooltip,
+                    );
+                  }),
                   elevation: 0,
+                  backgroundColor: Colors.white,
+                  title: Align(
+                    child: Image.asset(
+                      'assets/logo.png',
+                      height: 70,
+                      width: 70,
+                    ),
+                    alignment: Alignment.centerRight,
+                  ),
                   bottom: TabBar(
                     indicator: BoxDecoration(
                         borderRadius: BorderRadius.only(
@@ -163,7 +180,7 @@ class VoucherPageState extends State<VoucherPage> {
                             context,
                             MaterialPageRoute(
                                 builder: (context) =>
-                                    LoginPage()))), //news page
+                                    NewsAndPromotionPage(username: widget.username)))), //news page
                     Divider(
                       color: Colors.black,
                       thickness: 1,

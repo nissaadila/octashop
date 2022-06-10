@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:octashop/pages/home.dart';
 import 'package:octashop/pages/voucher.dart';
 
 class VoucherDetailPage extends StatefulWidget {
@@ -17,7 +18,7 @@ class VoucherDetailPage extends StatefulWidget {
       required this.image,
       required this.qty,
       required this.price})
-      : super(key: key); 
+      : super(key: key);
 
   @override
   State<StatefulWidget> createState() => VoucherDetailPageState();
@@ -44,39 +45,74 @@ class VoucherDetailPageState extends State<VoucherDetailPage> {
         _error = 'User ID must all number';
       });
     } else {
-      _showSnackbar('Purchase Syccessful!');
-      Future.delayed(
-          Duration(milliseconds: 500),
-          () => Navigator.push(_context,
-              MaterialPageRoute(builder: (_context) => VoucherPage(username: widget.username,))));
+      _showSnackbar('Purchase Successful!');
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => HomePage(username: widget.username)));
     }
   }
+
+// AppBar(
+//           leading: IconButton(
+//               onPressed: () => Navigator.push(
+//                   _context,
+//                   MaterialPageRoute(
+//                       builder: (_context) => VoucherPage(
+//                             username: widget.username,
+//                           ))),
+//               icon: Icon(
+//                 Icons.arrow_back_ios,
+//                 color: Color(0xff446382),
+//                 size: 25,
+//               )),
+//           actions: [
+//             Container(
+//               margin: EdgeInsets.only(right: 10, top: 5),
+//               child: Image.asset('assets/logo.png'),
+//             )
+//           ],
+//           elevation: 0,
+//           iconTheme: IconThemeData(color: Colors.black),
+//           backgroundColor: Colors.white,
+//           // elevation: 0,
+//         )
 
   @override
   Widget build(BuildContext context) {
     _context = context;
     return Scaffold(
         backgroundColor: Colors.white,
-        appBar: AppBar(
-          leading: IconButton(
-              onPressed: () => Navigator.push(_context,
-                  MaterialPageRoute(builder: (_context) => VoucherPage(username: widget.username,))),
-              icon: Icon(
-                Icons.arrow_back_ios,
-                color: Color(0xff446382),
-                size: 25,
-              )),
-          actions: [
-            Container(
-              margin: EdgeInsets.only(right: 10, top: 5),
-              child: Image.asset('assets/logo.png'),
-            )
-          ],
-          elevation: 0,
-          iconTheme: IconThemeData(color: Colors.black),
-          backgroundColor: Colors.white,
-          // elevation: 0,
-        ),
+        appBar: PreferredSize(
+            preferredSize: Size.fromHeight(70.0),
+            child: AppBar(
+              toolbarHeight: 70.0,
+              leading: IconButton(
+                  onPressed: () => Navigator.push(
+                      _context,
+                      MaterialPageRoute(
+                          builder: (_context) => VoucherPage(
+                                username: widget.username,
+                              ))),
+                  icon: Padding(
+                    padding: EdgeInsets.only(left: 10),
+                    child: Icon(
+                      Icons.arrow_back_ios,
+                      color: Color(0xff446382),
+                      size: 35,
+                    ),
+                  )),
+              elevation: 0,
+              backgroundColor: Colors.white,
+              title: Align(
+                child: Image.asset(
+                  'assets/logo.png',
+                  height: 70,
+                  width: 70,
+                ),
+                alignment: Alignment.centerRight,
+              ),
+            )),
         body: Column(
           children: [
             Expanded(
