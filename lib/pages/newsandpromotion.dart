@@ -1,9 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:newsandpromotion/HomePage.dart';
-import 'package:newsandpromotion/LoginPage.dart';
-import 'package:newsandpromotion/VoucherPage.dart';
+import 'package:octashop/pages/home.dart';
+import 'package:octashop/pages/voucher.dart';
+import 'package:octashop/pages/login.dart';
 
 class NewsAndPromotionPage extends StatefulWidget {
   final String username;
